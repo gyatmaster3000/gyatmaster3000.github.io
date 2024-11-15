@@ -1,69 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document Display</title>
-	<style>
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 20px;
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Display</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-		.pdf-container {
-			width: 100%;
-			height: 800px;
-			margin-bottom: 30px;
-		}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-		.image-container {
-			margin-bottom: 30px;
-		}
+    /* PDF container styles */
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      margin-bottom: 40px;
+    }
 
-		.image-container {
-			max-width: 100%;
-			height: auto;
-			display: block;
-			margin-bottom: 20px;
-		}
-		
-		h2 {
-			color: #333
-			margin-bottom: 15px;
-		}
-	</style>
+    /* Image container styles */
+    .image-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Heading styles */
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Button styles */
+    .download-button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-	<div class="container">
-		<!-- this is where the pdf files are -->
-		<h2>College Board Documents</h2>
-		<div class="pdf-container">
-			<object
-				data="images/national_first_gen_cert.pdf"
-				type="application/pdf"
-				width="100%"
-				height="100%">
-				<p>If unable to display a file, <a href="images/national_first_gen_cert.pdf">Download</a> instead. You can press ctrl+U to check the html to ensure all files are just .pdf and .png files if you are unsure. Thank you!</p>
-			</object>
-		</div>
-		
-		<div class="pdf-container">
-			<object	
-				data="images/small_town_recognition_cert.pdf"
-				type="application/pdf"
-				width="100%"
-				height="100%">
-				<p>If unable to display file, <a href="images/small_town_recognition_cert.pdf">Download</a> instead.</p>
-			</object>
-		</div>
+  <div class="container">
+    <!-- PDF section -->
+    <h2>College Board Documents</h2>
+    <div class="pdf-container">
+      <object
+        data="images/national_first_gen_cert.pdf"
+        type="application/pdf"
+        width="100%"
+        height="100%">
+        <a href="images/national_first_gen_cert.pdf" class="download-button">Download</a>
+      </object>
+    </div>
 
-		<!-- this is where the png files are -->
-		<h2>Some more Documents</h2>
-		<div class="image-container">
-			<img src="images/python_cert.png" alt="Python certification">
-			<img src="images/sql_cert.png" alt="SQL certification">
-		</div>
-	</div>
+    <div class="pdf-container">
+      <object	
+        data="images/small_town_recognition_cert.pdf"
+        type="application/pdf"
+        width="100%"
+        height="100%">
+        <a href="images/small_town_recognition_cert.pdf" class="download-button">Download</a>
+      </object>
+    </div>
+
+    <!-- Image section -->
+    <h2>Some more Documents</h2>
+    <div class="image-container">
+      <img src="images/python_cert.png" alt="Python certification">
+      <img src="images/sql_cert.png" alt="SQL certification">
+    </div>
+  </div>
 </body>
 </html>
